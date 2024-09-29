@@ -12,14 +12,26 @@ class onBoardingBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return SizedBox(
+      height: 500,
       child: PageView.builder(
+        
+
         controller: _controller,
         itemCount: 3,
         itemBuilder: (context, index) {
           return Column(
             children: [
-              Image.asset(Assets.imagesOnBoarding1),
+              Container
+              (
+                height: 290,
+                width: 343,
+                decoration: BoxDecoration(
+                  image: DecorationImage(image: AssetImage(Assets.imagesOnBoarding1),
+                  fit: BoxFit.fill
+                  )
+                ),
+              ),
               SizedBox(
                 height: 24,
               ),
@@ -27,12 +39,16 @@ class onBoardingBody extends StatelessWidget {
                SizedBox(
                 height: 32,
               ),
-            Text('Explore The history with Dalel in a smart way',style: CustomTextStyles.poppins400style24.copyWith(fontWeight: FontWeight.bold),textAlign: TextAlign.center,)
+            Text(
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              'Explore The history with Dalel in a smart way',style: CustomTextStyles.poppins400style24.copyWith(fontWeight: FontWeight.bold),textAlign: TextAlign.center,)
              ,
               SizedBox(
                 height: 16,
               ),
-            Text('Using our app’s history libraries you can find many historical periods ',style: CustomTextStyles.poppins300style16,textAlign: TextAlign.center,)
+            Text(maxLines: 2,
+              overflow: TextOverflow.ellipsis,'Using our app’s history libraries you can find many historical periods ',style: CustomTextStyles.poppins300style16,textAlign: TextAlign.center,)
             ],
           );
         },

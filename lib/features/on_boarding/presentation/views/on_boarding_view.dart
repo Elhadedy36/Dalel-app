@@ -14,11 +14,13 @@ class OnBoardingView extends StatelessWidget {
       (
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(children: 
+          child: ListView(
+            children: 
           [
             SizedBox(height: 40,),
             CustomNavBar(),
             onBoardingBody(),
+            SizedBox(height: 88,),
             CustomBtn(text: AppStrings.next,),
             SizedBox(height: 17,)
           ],),

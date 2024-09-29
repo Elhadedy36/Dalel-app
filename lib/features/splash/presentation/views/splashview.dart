@@ -40,7 +40,7 @@ void futureNavigate(context) {
      const Duration(seconds: 2),
      ()
      {
-       customNavigate(context, "/onBoarding");
+       customReplacementNavigate(context, "/onBoarding");
      }
    );
  }
