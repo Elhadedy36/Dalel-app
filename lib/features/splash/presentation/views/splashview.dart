@@ -1,3 +1,4 @@
+import 'package:dalel/core/Services/Service_Locator.dart';
 import 'package:dalel/core/database/Cache/Cache_Helper.dart';
 import 'package:dalel/core/functions/navigation.dart';
 import 'package:dalel/core/utils/app_strings.dart';
@@ -17,7 +18,7 @@ class _SplashviewState extends State<Splashview> {
   void initState() {
     // TODO: implement initState
     super.initState();
-     bool isOnBoardingVisited = CacheHelper().getData(key: 'isOnBoardingVisited')?? false;
+     bool isOnBoardingVisited = getIt<CacheHelper>().getData(key: 'isOnBoardingVisited')?? false;
     if(isOnBoardingVisited==true){
     futureNavigate(context,'/signUp');
     }else{

@@ -5,6 +5,7 @@ import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/core/utils/app_text_style.dart';
 import 'package:dalel/core/widgets/custom_button.dart';
 import 'package:dalel/features/on_boarding/data/models/on_boarding_model.dart';
+import 'package:dalel/features/on_boarding/presentation/views/functions/on_boarding.dart';
 import 'package:flutter/material.dart';
 
 class GetButtons extends StatelessWidget {
@@ -20,10 +21,13 @@ if(currentIndex == onBoardingData.length - 1)
                       children: [
                         CustomBtn(
                           text: AppStrings.createAccount,
-                          onPressed: () => customReplacementNavigate(context, '/signUp'),
+                          onPressed: () { 
+                            onBoardingVisited();
+                            customReplacementNavigate(context, '/signUp');}
                         ),
                         SizedBox(height: 16,),
                         GestureDetector(onTap: () {
+                           onBoardingVisited();
                           customReplacementNavigate(context, '/signIn');
                         },child: Text(AppStrings.loginNow,style:CustomTextStyles.poppins300style16.copyWith(fontWeight: FontWeight.w400),)),
                       ],

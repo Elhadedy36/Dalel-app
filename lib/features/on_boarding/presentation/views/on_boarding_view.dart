@@ -1,9 +1,11 @@
+import 'package:dalel/core/Services/Service_Locator.dart';
 import 'package:dalel/core/database/Cache/Cache_Helper.dart';
 import 'package:dalel/core/functions/navigation.dart';
 import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/core/utils/app_text_style.dart';
 import 'package:dalel/core/widgets/custom_button.dart';
 import 'package:dalel/features/on_boarding/data/models/on_boarding_model.dart';
+import 'package:dalel/features/on_boarding/presentation/views/functions/on_boarding.dart';
 import 'package:dalel/features/on_boarding/presentation/widgets/custo_nav_bar.dart';
 import 'package:dalel/features/on_boarding/presentation/widgets/get_buttons.dart';
 import 'package:dalel/features/on_boarding/presentation/widgets/on_boardin_body.dart';
@@ -34,7 +36,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               (
 
                 onTap: () {
-                  CacheHelper().put(key: 'isOnBoardingVisited', value: true);
+                   onBoardingVisited();
                    customReplacementNavigate(context, '/signUp');}
               ),
               onBoardingBody(
