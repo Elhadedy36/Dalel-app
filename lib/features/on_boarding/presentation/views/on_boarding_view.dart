@@ -1,3 +1,4 @@
+import 'package:dalel/core/database/Cache/Cache_Helper.dart';
 import 'package:dalel/core/functions/navigation.dart';
 import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/core/utils/app_text_style.dart';
@@ -31,7 +32,10 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               ),
               CustomNavBar
               (
-                onTap: () => customReplacementNavigate(context, '/signUp'),
+
+                onTap: () {
+                  CacheHelper().put(key: 'isOnBoardingVisited', value: true);
+                   customReplacementNavigate(context, '/signUp');}
               ),
               onBoardingBody(
                 controller: _controller,
