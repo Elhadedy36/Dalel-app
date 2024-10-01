@@ -18,7 +18,7 @@ abstract class AppStrings {
       TermsAndCondition =
           "Terms and Condition",
       signUp = "Sign Up",
-      signIn = "Sign In",
+      signIn = " Sign In",
       alreadyHaveAnAccount = "Already have an account ?",
       dontHaveAnAccount = "Don’t have an account ?",
       forgotPassword = "Forgot Password ?",
