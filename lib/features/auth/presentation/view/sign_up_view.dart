@@ -79,10 +79,13 @@ final String text1;
 final String text2;
   @override
   Widget build(BuildContext context) {
-    return Text.rich(
-       TextSpan(children: [
-      TextSpan(text:text1,style: CustomTextStyles.poppins400style12),
-      TextSpan(text: text2,style: CustomTextStyles.poppins400style12.copyWith(color: AppColors.lightGrey))
-    ]));
+    return Align(
+      alignment: Alignment.center,
+      child: Text.rich(
+         TextSpan(children: [
+        TextSpan(text:text1,style: CustomTextStyles.poppins400style12),
+        TextSpan(text: text2,style: CustomTextStyles.poppins400style12.copyWith(color: AppColors.lightGrey))
+      ])),
+    );
   }
 }
