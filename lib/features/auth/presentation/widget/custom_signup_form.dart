@@ -1,3 +1,4 @@
+import 'package:dalel/core/utils/app_colors.dart';
 import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/core/widgets/custom_button.dart';
 import 'package:dalel/features/auth/presentation/auth_cubit/cubit/auth_cubit.dart';
@@ -17,40 +18,51 @@ class customSifnUpForm extends StatelessWidget {
         // TODO: implement listener
       },
       builder: (context, state) {
+        AuthCubit authcubit = BlocProvider.of<AuthCubit>(context);
+
         return Form(
+          key: authcubit.signUpFormKey,
             child: Column(
           children: [
-             CustomTextFormField(labelText: AppStrings.fristName,
-             onChanged: (fristName)
-             {
-BlocProvider.of<AuthCubit>(context).fristName =fristName;
-             },),
-             CustomTextFormField(labelText: AppStrings.lastName,
-             onChanged: (lastName)
-             {
-BlocProvider.of<AuthCubit>(context).lastName =lastName;
-
-             },),
-             CustomTextFormField(labelText: AppStrings.emailAddress,
-             onChanged: (emailAddress)
-             {
-              BlocProvider.of<AuthCubit>(context).emailAddress =emailAddress;
-
-             },),
-             CustomTextFormField(labelText: AppStrings.password,
-             onChanged: (password)
-             {
-BlocProvider.of<AuthCubit>(context).password =password;
-             },
-             ),
-             TermsAndCondition(),
-             SizedBox(
+            CustomTextFormField(
+              labelText: AppStrings.fristName,
+              onChanged: (fristName) {
+                authcubit.fristName = fristName;
+              },
+            ),
+            CustomTextFormField(
+              labelText: AppStrings.lastName,
+              onChanged: (lastName) {
+                authcubit.lastName = lastName;
+              },
+            ),
+            CustomTextFormField(
+              labelText: AppStrings.emailAddress,
+              onChanged: (emailAddress) {
+                authcubit.emailAddress = emailAddress;
+              },
+            ),
+            CustomTextFormField(
+              labelText: AppStrings.password,
+              onChanged: (password) {
+                authcubit.password = password;
+              },
+            ),
+            TermsAndCondition(),
+            SizedBox(
               height: 88,
             ),
-            CustomBtn(text: AppStrings.signUp, onPressed: () 
-            {
-              BlocProvider.of<AuthCubit>(context).signUpWithEmailAndPassword();
-            }),
+            CustomBtn(
+                text: AppStrings.signUp,
+                color: authcubit.termsAndConditionsCheckBoxValue==false? AppColors.Grey:null ,
+                onPressed: () {
+                  if(authcubit.termsAndConditionsCheckBoxValue == true){
+                    
+                  if(authcubit.signUpFormKey.currentState!.validate()){
+                    authcubit.signUpWithEmailAndPassword();
+                  }
+                  }
+                }),
           ],
         ));
       },

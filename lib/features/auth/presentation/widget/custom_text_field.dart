@@ -15,6 +15,9 @@ final Function(String)? onFieldSubmitted;
     return Padding(
       padding: const EdgeInsets.only(right: 8,left: 8,top: 24),
       child: TextFormField( 
+        validator: (value) {
+          return 'this field is required';
+        },
         onChanged: onChanged,
         onFieldSubmitted: onFieldSubmitted,
         decoration: InputDecoration(

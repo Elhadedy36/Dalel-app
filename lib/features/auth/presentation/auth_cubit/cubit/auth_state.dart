@@ -8,3 +8,4 @@ final class signupFailureState extends AuthState {
   final String error;
   signupFailureState({required this.error});
 }
+final class TermsAndConditionsUpdateState extends AuthState {}
