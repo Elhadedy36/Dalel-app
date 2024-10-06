@@ -1,5 +1,6 @@
 import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/core/widgets/custom_button.dart';
+import 'package:dalel/features/auth/presentation/widget/custom_signup_form.dart';
 import 'package:dalel/features/auth/presentation/widget/custom_text_field.dart';
 import 'package:dalel/features/auth/presentation/widget/habe_an_account_widget.dart';
 import 'package:dalel/features/auth/presentation/widget/terms_and_condition.dart';
@@ -30,41 +31,19 @@ class SignUpView extends StatelessWidget {
               ),
             ),
             SliverToBoxAdapter(
-              child: CustomTextField(
-                labelText: AppStrings.fristName,
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: CustomTextField(
-                labelText: AppStrings.lastName,
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: CustomTextField(
-                labelText: AppStrings.emailAddress,
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: CustomTextField(
-                labelText: AppStrings.password,
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: TermsAndCondition(),
+              child: customSifnUpForm(),
             ),
             SliverToBoxAdapter(
               child: SizedBox(
-                height: 88,
+                height: 16,
               ),
             ),
             SliverToBoxAdapter(
-              child: CustomBtn(
-                text: AppStrings.signUp,
-                onPressed: () {},
+              child: HaveAnAccountWidget(
+                text1: AppStrings.alreadyHaveAnAccount,
+                text2: AppStrings.signIn,
               ),
-            ),
-            SliverToBoxAdapter(child: SizedBox(height: 16,),),
-            SliverToBoxAdapter(child: HaveAnAccountWidget(text1: AppStrings.alreadyHaveAnAccount,text2: AppStrings.signIn,),)
+            )
           ],
         ),
       ),
