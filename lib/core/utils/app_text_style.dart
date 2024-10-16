@@ -53,6 +53,13 @@ abstract class CustomTextStyles {
       fontWeight: FontWeight.w600,
       color: Colors.black
     );
+ static final saira700style32
+   = TextStyle(
+      fontFamily: "Saira",
+      fontSize: 32,
+      fontWeight: FontWeight.w700,
+      color: Colors.white
+    );
 
 
 }

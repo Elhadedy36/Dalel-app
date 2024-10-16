@@ -61,7 +61,7 @@ abstract class AppStrings {
       backToHome = "Back To Home",
       //!Forgot password
       forgotPasswordPage = "Forgot Password",
-      sendVerificationCode = "Send Verification Code",
+      sendVerificationCode = "Send Verification link",
       verificationNow = "Verification Now",
       resendCode = "Resend Code",
       verifyAccount = "Verify Account",
