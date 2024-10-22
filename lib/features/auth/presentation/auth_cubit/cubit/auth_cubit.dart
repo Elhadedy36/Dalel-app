@@ -15,10 +15,12 @@ class AuthCubit extends Cubit<AuthState> {
   GlobalKey<FormState> forgotPasswordFormKey = GlobalKey<FormState>();
   bool? termsAndConditionsCheckBoxValue = false;
   bool? obsecure = true;
-  signUpWithEmailAndPassword() async {
+
+  
+ Future<void> signUpWithEmailAndPassword() async {
     try {
       emit(signupLoadingState());
-      final credential =
+    
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailAddress!,
         password: password!,
@@ -42,21 +44,21 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  verifyEmail() async {
+ Future<void> verifyEmail() async {
     await FirebaseAuth.instance.currentUser!.sendEmailVerification();
   }
 
-  updateTermsAndConditionsCheckBox({required newValue}) {
+ void updateTermsAndConditionsCheckBox({required newValue}) {
     termsAndConditionsCheckBoxValue = newValue;
     emit(TermsAndConditionsUpdateState());
   }
 
-  obsecureTextUpdate() {
+ void obsecureTextUpdate() {
     obsecure = !obsecure!;
     emit(obsecureTextState());
   }
 
-  signInWithEmailAndPassword() async {
+ Future<void> signInWithEmailAndPassword() async {
     try {
       emit(signinLoadingState());
       await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -78,7 +80,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  resetPasswordWithLink() async {
+ Future<void> resetPasswordWithLink() async {
     try {
       emit(ResetPasswordLoadingState());
       await FirebaseAuth.instance.sendPasswordResetEmail(email: emailAddress!);
@@ -90,7 +92,7 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
 
-addUserProfile()async
+Future<void> addUserProfile()async
 {
   CollectionReference users = FirebaseFirestore.instance.collection("users");
   await users.add

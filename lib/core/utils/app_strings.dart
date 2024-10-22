@@ -26,6 +26,8 @@ abstract class AppStrings {
       recommendations = "Recommendations",
       aboutAncientEgypt = "About Ancient Egypt",
       ancientEgyptWars = "Ancient Egypt Wars",
+      AncientEgypt = "Ancient Egypt",
+      islamicera = "Islamic Era",
       //!Search Strings
       searchDeepIntoTheHistory = "Search deep into the history",
       recent = "Recent",
@@ -43,6 +45,8 @@ abstract class AppStrings {
       bazar = "Bazar",
       historyBooks = "History Books",
       historicalSouvenirs = "Historical Souvenirs",
+      historicalCharacters = "Historical Characters",
+      historicalperiods = "Historical Periods",
       //!Cart
       myCart = "My Cart",
       totalPayment = "Total Payment",
@@ -67,4 +71,13 @@ abstract class AppStrings {
       verifyAccount = "Verify Account",
       enter4DigitCodeWeHaveSentTo = "Enter 4 digit code we have sent to ",
       haventReceivedVerificationCode = "Haven’t received verification code?";
+}
+
+abstract class FirebaseStrings
+{
+  static const String historicalperiods = 'historical_periods';
+  static const String name = 'name';
+  static const String description = 'description';
+  static const String image = 'image';
+  static const String wars = 'wars';
 }

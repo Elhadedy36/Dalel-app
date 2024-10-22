@@ -46,7 +46,7 @@ class customForgotPasswordForm extends StatelessWidget {
                   ),
                   
                   
-                  state is signinLoadingState
+                  state is ResetPasswordLoadingState
                       ? CircularProgressIndicator()
                       : CustomBtn(
                           text: AppStrings.sendVerificationCode,

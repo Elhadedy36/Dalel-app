@@ -53,6 +53,14 @@ abstract class CustomTextStyles {
       fontWeight: FontWeight.w600,
       color: Colors.black
     );
+   
+ static final poppins400style20
+   = TextStyle(
+      fontFamily: "Poppins",
+      fontSize: 20,
+      fontWeight: FontWeight.w400,
+      color: AppColors.deepBrown
+    );
  static final saira700style32
    = TextStyle(
       fontFamily: "Saira",

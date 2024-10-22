@@ -20,7 +20,7 @@ class custom_sign_in_form extends StatelessWidget {
         if (state is signinSuccessState) {
           showToast('Welcome Back');
           FirebaseAuth.instance.currentUser!.emailVerified == true
-              ? customReplacementNavigate(context, '/home')
+              ? customReplacementNavigate(context, '/homeNavBar')
               : showToast('Please Verify Your Email');
         } else if (state is signinFailureState) {
           showToast(state.error);
@@ -64,10 +64,10 @@ class custom_sign_in_form extends StatelessWidget {
                     ? CircularProgressIndicator()
                     : CustomBtn(
                         text: AppStrings.signIn,
-                        onPressed: () {
+                        onPressed: ()async {
                           if (authcubit.signInFormKey.currentState!
                               .validate()) {
-                            authcubit.signInWithEmailAndPassword();
+                          await  authcubit.signInWithEmailAndPassword();
                           }
                         }),
               ],

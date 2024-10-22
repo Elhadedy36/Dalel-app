@@ -24,7 +24,7 @@ class _SplashviewState extends State<Splashview> {
     if (isOnBoardingVisited == true) {
       FirebaseAuth.instance.currentUser == null
           ? futureNavigate(context, '/signIn')
-          :FirebaseAuth.instance.currentUser!.emailVerified == true ? futureNavigate(context, '/home'):futureNavigate(context, '/signIn');
+          :FirebaseAuth.instance.currentUser!.emailVerified == true ? futureNavigate(context, '/homeNavBar'):futureNavigate(context, '/signIn');
     } else {
       futureNavigate(context, '/onBoarding');
     }
