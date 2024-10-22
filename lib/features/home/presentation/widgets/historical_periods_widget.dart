@@ -1,10 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dalel/core/utils/app_assets.dart';
+import 'package:dalel/core/utils/app_colors.dart';
 import 'package:dalel/core/utils/app_strings.dart';
+import 'package:dalel/core/widgets/custom_shimmer_category.dart';
 import 'package:dalel/features/home/data/historical_periods.dart';
 import 'package:dalel/features/home/presentation/widgets/historical_periods_item.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 
 class HistoricalPeriods extends StatelessWidget {
   const HistoricalPeriods({super.key});
@@ -44,7 +47,7 @@ class HistoricalPeriods extends StatelessWidget {
                   ),
                 ));
           }
-          return Text("loading");
+          return CustomShimmerCategory();
         });
   }
 }
